@@ -1,0 +1,4 @@
+/www/
+/docker/nginx/local/
+/docker/docker-compose.override.yml
+/.vagrant/

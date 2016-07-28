@@ -1,7 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/jessie64"
-  config.vm.hostname = "dev-docker"
-  config.vm.boot_timeout = 300
+  config.vm.hostname = "dev-arilo-box"
 
   config.vm.provision :shell, path: "bootstrap.sh"
 
@@ -9,11 +8,11 @@ Vagrant.configure("2") do |config|
 
   config.ssh.forward_agent = true
 
-  config.vm.synced_folder "./www", "/srv/www", :nfs => true
+  config.vm.synced_folder "../www", "/srv/www", :nfs => true
   config.vm.synced_folder "./docker", "/docker", :nfs => true
 
   config.vm.provider :virtualbox do |vb|
-    vb.name = "DevDockerBox"
+    vb.name = "Dev Arilo Box 1.0"
     vb.customize [
       "modifyvm", :id,
       "--memory", 8192,

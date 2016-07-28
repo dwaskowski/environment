@@ -1,4 +1,5 @@
 /www/
+/docker/jenkins/
 /docker/nginx/local/
 /docker/docker-compose.override.yml
 /.vagrant/

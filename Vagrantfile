@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
   config.ssh.forward_agent = true
 
   config.vm.synced_folder "../www", "/srv/www", :nfs => true
+  config.vm.synced_folder "../dbs", "/srv/dbs", :nfs => true
   config.vm.synced_folder "./docker", "/docker", :nfs => true
 
   config.vm.provider :virtualbox do |vb|

@@ -1,8 +1,8 @@
 *.DS_Store
 /www/
 /docker/jenkins/
-/docker/jenkins/scripts/jira_checker.py
-/docker/jenkins/Dockerfile
+/docker/jenkins/scripts/
+/docker/jenkins/*
 /docker/nginx/local/
 /docker/docker-compose.override.yml
 /.vagrant/

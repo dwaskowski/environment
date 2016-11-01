@@ -9,6 +9,15 @@ nginx:
 test:
   build: ./php7.0
   command: php -S 0.0.0.0:8000 -t /web
+  links:
+    - db
   volumes:
     - /srv/www:/web
   restart: always
+
+db:
+  build: ./mysql5.7
+  ports:
+    - "21501:3306"
+  volumes:
+    - /srv/dbs/mysql:/var/lib/mysql

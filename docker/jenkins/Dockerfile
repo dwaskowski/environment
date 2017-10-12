@@ -22,4 +22,4 @@ RUN chmod 0644 /etc/cron.d/jenkins-crons \
     && crontab /etc/cron.d/jenkins-crons \
     && cron
 
-RUN pip install python-jenkins
+RUN pip install python-jenkins unidecode

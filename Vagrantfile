@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "../www", "/srv/www", :nfs => true
   config.vm.synced_folder "../dbs", "/srv/dbs", :nfs => true
   config.vm.synced_folder "./docker", "/docker", :nfs => true
+  config.vm.synced_folder "/Volumes/Dimas-USB/scripts", "/docker/jenkins/scripts", :nfs => true
 
   config.vm.provider :virtualbox do |vb|
     vb.name = "Dev Arilo Box 1.0"

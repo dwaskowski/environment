@@ -9,6 +9,18 @@ apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E8
 echo "deb https://apt.dockerproject.org/repo debian-jessie main" > /etc/apt/sources.list.d/docker.list
 apt-get -qq update
 apt-get -qq install docker-engine curl python-pip cron nano git htop
+
+# Install php 7.0
+echo 'deb http://packages.dotdeb.org jessie all' > /etc/apt/sources.list.d/dotdeb.list
+apt-get -qq install apt-transport-https
+curl http://www.dotdeb.org/dotdeb.gpg | apt-key add -
+apt-get -qq update
+apt-get -qq install php7.0 php7.0-xml php7.0-mysql
+
+
+# Downloading and Installing Composer
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
 service docker start
 
 # Docker compose
